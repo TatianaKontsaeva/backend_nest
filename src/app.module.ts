@@ -10,6 +10,7 @@ import { DataSource } from 'typeorm';
 import { User } from './users/entities/user.entity';
 import { Product } from './products/entities/product.entity';
 import { AuthModule } from './auth/auth.module';
+import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AuthModule } from './auth/auth.module';
     ProductsModule,
     UsersModule,
     AuthModule,
+    ShoppingCartModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,9 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
-import { Product } from 'src/products/entities/product.entity';
-
 @Entity()
-export class User {
+export class ShoppingCart {
   @ApiProperty({
     minimum: 1,
   })
@@ -16,18 +14,21 @@ export class User {
 
   @ApiProperty()
   @Column()
-  surname: string;
-
-  @ApiProperty()
-  @Column({
-    unique: true,
-  })
-  email: string;
+  img: string;
 
   @ApiProperty()
   @Column()
-  password: string;
+  price: number;
 
-  @OneToMany(() => Product, (product) => product.users)
-  products: Product[];
+  @ApiProperty()
+  @Column()
+  quantity: number;
+
+  @ApiProperty()
+  @Column()
+  count: number;
+
+  @ApiProperty()
+  @Column()
+  userId: number;
 }
