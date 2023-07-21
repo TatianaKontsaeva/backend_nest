@@ -59,4 +59,8 @@ describe('AppController (e2e)', () => {
       name: 'Iphone 14',
     });
   });
+
+  it('/products/1 (DELETE)', () => {
+    return request(app.getHttpServer()).delete('/products/1').expect(200);
+  });
 });
