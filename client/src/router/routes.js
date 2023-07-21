@@ -24,7 +24,33 @@ const routes = [
       },
     ],
   },
-  // { path: '/', component: () => import('pages/MsLoginPage.vue') },
+  {
+    path: "/auth",
+    component: () => import("layouts/AuthorizationLayout.vue"),
+    children: [
+      {
+        path: "/auth",
+        name: "auth",
+        component: () => import("components/auth/Auth.vue"),
+      },
+      {
+        path: "/signUp",
+        name: "signup",
+        component: () => import("components/auth/SignUpPage.vue"),
+      },
+      {
+        path: "/login",
+        name: "login",
+        component: () => import("components/auth/LoginPage.vue"),
+      },
+      // {
+      //   path: "/Profile",
+      //   name: "profile",
+      //   component: () => import("components/UserProfile.vue"),
+      // },
+    ],
+  },
+
   {
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),

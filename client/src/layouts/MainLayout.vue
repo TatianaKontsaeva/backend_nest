@@ -19,7 +19,7 @@
                   label="Войти"
                   icon="login"
                   type="button"
-                  @click="login"
+                  to="/auth"
                 />
               </q-item>
               <div class="q-ml-md">
